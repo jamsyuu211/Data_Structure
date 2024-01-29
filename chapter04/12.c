@@ -1,3 +1,5 @@
+//í•´ê²°ëª»í•¨
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,7 +26,7 @@ int is_full(StackType* s) {
 
 void push(StackType* s, element item) {
 	if (is_full(s)) {
-		fprintf(stderr, "½ºÅØ Æ÷È­ ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤í… í¬í™” ì—ëŸ¬\n");
 		return;
 	}
 	else (s->data[s->top++] = item);
@@ -32,7 +34,7 @@ void push(StackType* s, element item) {
 
 element pop(StackType* s) {
 	if (is_empty(s)) {
-		fprintf(stderr, "½ºÅØ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤í… ê³µë°± ì—ëŸ¬\n");
 		exit(1);
 	}
 	else return (s->data[--s->top]);
@@ -40,7 +42,7 @@ element pop(StackType* s) {
 
 element peek(StackType* s) {
 	if (is_empty(s)) {
-		fprintf(stderr, "½ºÅØ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤í… ê³µë°± ì—ëŸ¬\n");
 		exit(1);
 	}
 	else return (s->data[s->top]);
@@ -75,7 +77,7 @@ void run_length(char tmp[]) {
 			pop(&s);
 		}
 	}
-	printf("¾ĞÃàµÈ ¹®ÀÚ¿­: ");
+	printf("ì••ì¶•ëœ ë¬¸ìì—´: ");
 	for (i = 0; i < count; i++) {
 		printf("%d%c", check[peek(&out)], (pop(&out) + 'a'));
 	}
@@ -83,7 +85,7 @@ void run_length(char tmp[]) {
 
 int main(void) {
 	char tmp[100];
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf("%s", tmp);
 	
 	run_length(tmp);
